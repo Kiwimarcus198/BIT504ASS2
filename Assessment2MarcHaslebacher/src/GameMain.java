@@ -22,6 +22,7 @@ public class GameMain extends JPanel implements MouseListener{
 	public static final int CELL_PADDING = CELL_SIZE / 6;    
 	public static final int SYMBOL_SIZE = CELL_SIZE - CELL_PADDING * 2;    
 	public static final int SYMBOL_STROKE_WIDTH = 8;
+	protected static final String EXIT_ON_CLOSE = null;
 	
 	/*declare game object variables*/
 	// the game board 
@@ -39,7 +40,7 @@ public class GameMain extends JPanel implements MouseListener{
 
 	/** Constructor to setup the UI and game components on the panel */
 	public GameMain() {   
-		
+
 		// TODO: This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'.          
 	    
 	    
@@ -58,10 +59,10 @@ public class GameMain extends JPanel implements MouseListener{
 		
 		
 		// TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
-
+		board = new Board();
 		
 		//TODO: call the method to initialise the game board
-
+		initGame();
 	}
 	
 	public static void main(String[] args) {
@@ -70,18 +71,19 @@ public class GameMain extends JPanel implements MouseListener{
 	         public void run() {
 				//create a main window to contain the panel
 				JFrame frame = new JFrame(TITLE);
-				
+
 				//TODO: create the new GameMain panel and add it to the frame
-						
+				frame.add(new GameMain());
 				
-				
-				//TODO: set the default close operation of the frame to exit_on_close
-		            
-				
+				//TODO: set the default close operation of the frame to exit_on_close            
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.pack();             
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 	         }
+
+				
+			
 		 });
 	}
 	/** Custom painting codes on this JPanel */
