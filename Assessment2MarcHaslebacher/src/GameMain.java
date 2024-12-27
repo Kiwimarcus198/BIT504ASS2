@@ -118,7 +118,7 @@ public class GameMain extends JPanel implements MouseListener{
 				statusBar.setForeground(Color.RED);          
 				statusBar.setText("'X' Won! Click to play again.");       
 			} else if (currentState == GameState.Nought_won) {          
-				statusBar.setForeground(Color.RED);          
+				statusBar.setForeground(Color.BLUE);          
 				statusBar.setText("'O' Won! Click to play again.");       
 			}
 		}
