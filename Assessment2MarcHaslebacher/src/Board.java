@@ -27,16 +27,19 @@ public class Board {
 	 /** Return true if it is a draw (i.e., no more EMPTY cells) */ 
 	public boolean isDraw() {
 		// TODO: Check whether the game has ended in a draw. 
+		int empty = 9;
 		boolean draw = false;
 			for (int row = 0; row < GameMain.ROWS; ++row) {
 				for (int col = 0; col < GameMain.COLS; ++col) {
-					if(cells[row][col].content == Player.Empty) {
-						draw = false;
-	
-					} else draw = true;;
+					if(cells[row][col].content != Player.Empty) {
+						empty -= 1;	
+						if (empty == 0) {draw = true;}
+							
+						}
+					} 
 					
 				}
-			}
+
 			return draw;
 
 				
